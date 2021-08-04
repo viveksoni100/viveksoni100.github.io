@@ -153,8 +153,8 @@ class CardContainer extends React.Component {
     super();
     this.state = {
       cards: Immutable.fromJS([{
-        word: 'Jazz',
-        description: 'A type of music of black American origin characterized by improvisation, syncopation, and usually a regular or forceful rhythm, emerging at the beginning of the 20th century.' },
+        word: 'Where exactly can you use lambdas?',
+        description: 'You can use a lambda expression in the context of a functional interface. In a nutshell, a functional interface is an interface that specifies exactly one abstract method. You already know several other functional interfaces in the Java API such as Comparator and Runnable. An interface is still a functional interface if it has many default methods as long as it specifies only one abstract method.' },
       {
         word: 'Reggae',
         description: 'Music like Bob Marley, man.' },
@@ -228,7 +228,7 @@ class CardContainer extends React.Component {
       React.createElement("span", {
         className: "card-container__icon  fa fa-plus",
         onClick: () => {
-          this.setState({ showModal: !this.state.showModal });
+          //this.setState({ showModal: !this.state.showModal });
         } }),
 
       this.state.showModal ? /*#__PURE__*/
@@ -240,9 +240,6 @@ class CardContainer extends React.Component {
       this.generateCards(), /*#__PURE__*/
       React.createElement("div", { className: "card-container__dots-wrapper" },
       this.generateDots())));
-
-
-
   }}
 
 

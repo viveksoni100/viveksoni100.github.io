@@ -29,7 +29,7 @@ html, body {
 
 .card {
   width: 30em;
-  height: 15em;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -222,6 +222,7 @@ html, body {
   background: #F1F1F1;
   color: #444;
   transition: 0.2s;
+    display: none;
 }
 .card__next-button:hover {
   background: #d8d8d8;
@@ -234,6 +235,7 @@ html, body {
   background: #F1F1F1;
   color: #444;
   transition: 0.2s;
+    display: none;
 }
 .card__prev-button:hover {
   background: #d8d8d8;
