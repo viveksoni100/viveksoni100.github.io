@@ -151,7 +151,7 @@ h2 {
 h3 {
   margin-top: 0px;
   margin-bottom: 10px;
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1.35;
   font-weight: 900;
 }
@@ -199,7 +199,7 @@ ol {
 
 img {
   display: inline-block;
-  max-width: 100%;
+  max-width: 70%;
 }
 
 blockquote {
@@ -523,7 +523,7 @@ figcaption {
 
 .heading-beta {
   color: #333;
-  font-size: 74px;
+  font-size: 30px;
   line-height: 1.15;
   font-weight: 900;
 }
@@ -643,7 +643,7 @@ figcaption {
 
 .margin-bottom {
   margin-bottom: 24px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 3%;
 }
 
