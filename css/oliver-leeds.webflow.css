@@ -513,7 +513,7 @@ figcaption {
 
 .text-large {
   margin-left: 0px;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.4;
 }
 
@@ -1653,7 +1653,7 @@ figcaption {
 }
 
 .size-h2 {
-  font-size: 28px;
+  font-size: 22px;
   line-height: 1.2;
   font-weight: 900;
 }
@@ -4785,7 +4785,7 @@ figcaption {
     flex-basis: 100%;
   }
   .heading-beta {
-    font-size: 52px;
+    font-size: 35px;
   }
   .text-medium.xs-text-normal {
     font-size: 16px;
