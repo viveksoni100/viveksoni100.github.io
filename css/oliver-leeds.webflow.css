@@ -506,14 +506,14 @@ figcaption {
 
 .heading-alpha {
   color: #333;
-  font-size: 105px;
+  font-size: 70px;
   line-height: 1;
   font-weight: 900;
 }
 
 .text-large {
   margin-left: 0px;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.4;
 }
 
@@ -643,7 +643,7 @@ figcaption {
 
 .margin-bottom {
   margin-bottom: 24px;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 3%;
 }
 
@@ -1653,7 +1653,7 @@ figcaption {
 }
 
 .size-h2 {
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.2;
   font-weight: 900;
 }
