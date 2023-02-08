@@ -77,7 +77,7 @@
             <div class="w-slider-mask">
               <div class="w-slide">
                 <div>
-                  <h4 class="margin-bottom">Sollicitudin Consectetur Ullamcorper Risus Ligula</h4>
+                  <h4 class="margin-bottom">The main problem that Keycloak solves is to provide a secure and convenient way for users to access multiple applications, without having to repeatedly enter their credentials</h4>
                   <div class="text-small low-text-contrast"></div>
                 </div>
               </div>
@@ -117,7 +117,7 @@
         </div>
       </div>
       <div class="col lg-1 no-margin-bottom"></div>
-      <div class="col lg-8 md-12">
+      <div class="col lg-8 md-12" style="overflow: auto;">
         <!-- article starts -->
         <div class="rich-text w-richtext">
           <h3>What is Keycloak?</h3>
@@ -166,43 +166,34 @@
             <center><img src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/2.png" class="responsive"></center>
             <center><img src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/3.png" class="responsive"></center>
             <p><b style="font-weight: bold;">3. Create Admin user</b></p>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/4.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/4.png"
                          class="responsive"></center>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/5.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/5.png"
                          class="responsive"></center>
             <p><b style="font-weight: bold;">4. go to Administration console and login with created user</b></p>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/6.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/6.png"
                          class="responsive"></center>
             <p><b style="font-weight: bold;">5. create a realm (a component that holds user, role and role based
                 authentications)</b></p>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/7.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/7.png"
                          class="responsive"></center>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/8.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/8.png"
                          class="responsive"></center>
             <p><b style="font-weight: bold;">6. create a client (a component that we use in our springboot app to
                 communicate)</b></p>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/9.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/9.png"
                          class="responsive"></center>
             <p><b style="font-weight: bold;">7. create a role</b></p>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/10.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/10.png"
                          class="responsive"></center>
             <p><b style="font-weight: bold;">8. create a user and set username and password using credential tab</b></p>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/11.png"
+            <center><img width="25%" height="25%" src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/11.png"
                          class="responsive"></center>
             <center><img width="25%" height="25%"
                          src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/12.png"
                          class="responsive"></center>
             <p><b style="font-weight: bold;">9. map user and roles</b></p>
-            <center><img width="25%" height="25%"
-                         src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/13.png"
+            <center><img src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/13.png"
                          class="responsive"></center>
             <p><b style="font-weight: bold;">10. add keycloak dependencies</b></p>
             <pre class="code">
@@ -284,6 +275,75 @@
                   }
               }
           </pre>
+          <p><b style="font-weight: bold;">13. configuring role in our code</b></p>
+
+            <pre class="code">
+            package com.javatechie.keycloak;
+
+            import com.javatechie.keycloak.entity.Employee;
+            import com.javatechie.keycloak.service.EmployeeService;
+            import org.springframework.beans.factory.annotation.Autowired;
+            import org.springframework.boot.SpringApplication;
+            import org.springframework.boot.autoconfigure.SpringBootApplication;
+            import org.springframework.http.ResponseEntity;
+            import org.springframework.web.bind.annotation.GetMapping;
+            import org.springframework.web.bind.annotation.PathVariable;
+            import org.springframework.web.bind.annotation.RequestMapping;
+            import org.springframework.web.bind.annotation.RestController;
+
+            import javax.annotation.security.RolesAllowed;
+            import java.util.List;
+
+            @SpringBootApplication
+            @RestController
+            @RequestMapping("/employees")
+            public class SpringBootKeycloakExampleApplication {
+
+                @Autowired
+                private EmployeeService service;
+
+                //this method can be accessed by user whose role is user
+                @GetMapping("/{employeeId}")
+                @RolesAllowed("user")   // only user role can allow this method
+                public ResponseEntity&lt;Employee&gt; getEmployee(@PathVariable int employeeId) {
+                    return ResponseEntity.ok(service.getEmployee(employeeId));
+                }
+
+                //this method can be accessed by user whose role is admin
+                @GetMapping
+                @RolesAllowed("admin") // only admin role can allow this method
+                public ResponseEntity&lt;List&lt;Employee&gt;&gt; findALlEmployees() {
+                    return ResponseEntity.ok(service.getAllEmployees());
+                }
+
+                public static void main(String[] args) {
+                    SpringApplication.run(SpringBootKeycloakExampleApplication.class, args);
+                }
+
+            }
+
+            </pre>
+
+            <p><b style="font-weight: bold;">14. testing our code using postman with following parameters</b></p>
+            <pre>
+                Note - in postman's authorization type select OAuth 2.0
+                Access Token Url : http://localhost:8080/auth/realms/demo-realm/protocol/openid-connect/token
+                Client ID : keycloak-demo
+                Scope : openid
+                Grant Type : Password Credentials
+                Username : &lt;username&gt;
+                Password : &lt;password&gt;
+                Access token : &lt;access token&gt;
+            </pre>
+            <center><img src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/14.png"
+                         class="responsive"></center>
+            <center><img src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/15.png"
+                         class="responsive"></center>
+            <center><img src="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/keycloak/16.png"
+                         class="responsive"></center>
+            <hr>
+            <p style="float: right;">source : <a href="https://www.keycloak.org/">https://www.keycloak.org/</a></p>
+            <p style="float: right;">source code : <a href="https://github.com/viveksoni100/keycloak_learning">https://github.com/viveksoni100/keycloak_learning</a></p>                         
         <!-- article ends -->
       </div>
     </div>

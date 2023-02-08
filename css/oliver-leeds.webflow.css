@@ -644,6 +644,7 @@ figcaption {
 .margin-bottom {
   margin-bottom: 24px;
     font-size: 25px;
+    border-radius: 3%;
 }
 
 .margin-bottom.is-bold {
