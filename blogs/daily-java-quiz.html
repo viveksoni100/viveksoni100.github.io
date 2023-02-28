@@ -12,55 +12,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="http://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script>
-        $('#quiz').quiz({
-            counterFormat: 'Question %current of %total',
-            questions: [
-                {
-                    'q': 'Is jQuery required for this plugin?',
-                    'options': [
-                        'Yes',
-                        'No'
-                    ],
-                    'correctIndex': 0,
-                    'correctResponse': 'Good job, that was obvious.',
-                    'incorrectResponse': 'Well, if you don\'t include it, your quiz won\'t work'
-                },
-                {
-                    'q': 'How do you use it?',
-                    'options': [
-                        'Include jQuery, that\'s it!',
-                        'Include jQuery and the plugin javascript.',
-                        'Include jQuery, the plugin javascript, the optional plugin css, required markup, and the javascript configuration.'
-                    ],
-                    'correctIndex': 2,
-                    'correctResponse': 'Correct! Sounds more complicated than it really is.',
-                    'incorrectResponse': 'Come on, it\'s not that easy!'
-                },
-                {
-                    'q': 'The plugin can be configured to require a perfect score.',
-                    'options': [
-                        'True',
-                        'False'
-                    ],
-                    'correctIndex': 0,
-                    'correctResponse': 'You\'re a genius! You just set allowIncorrect to true.',
-                    'incorrectResponse': 'Why you have no faith!? Just set allowIncorrect to true.'
-                },
-                {
-                    'q': 'How do you specify the questions and answers?',
-                    'options': [
-                        'MySQL database',
-                        'In the HTML',
-                        'In the javascript configuration'
-                    ],
-                    'correctIndex': 2,
-                    'correctResponse': 'Correct! Refer to the documentation for the structure.',
-                    'incorrectResponse': 'Wrong! Do it in the javascript configuration. You might need to read the documentation.'
-                }
-            ]
-        });
-    </script>
     <script
             type="text/javascript">WebFont.load({google: {families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Merriweather:300,300italic,400,400italic,700,700italic,900,900italic", "Gothic A1:100,200,300,regular,500,600,700,800,900"]}});</script>
     <script
@@ -156,7 +107,22 @@
         <div class="col lg-8 md-12" style="overflow: auto;">
             <div class="rich-text w-richtext">
                 <!-- article starts -->
-                lets start
+                <div id="quiz">
+                    <div id="quiz-header">
+                        <h2>Random Knowledge Rumble: Let's see what you've got!</h2>
+                        <p class="faded">Welcome to the Daily Java Quiz, designed to help you sharpen your Java
+                            programming skills! This quiz consists of carefully curated questions that cover the key
+                            concepts and topics of Java programming, including data types, operators, loops, classes,
+                            inheritance, polymorphism, and more. Whether you're a beginner, intermediate, or advanced
+                            Java programmer, this quiz will challenge you and help you identify areas where you can
+                            improve. And if you're planning to take a Java certification exam, this quiz will serve as a
+                            valuable resource to help you prepare and practice. So, let's get started and see how well
+                            you know Java programming!</p>
+                    </div>
+                    <div id="quiz-start-screen">
+                        <p><a href="#" id="quiz-start-btn" class="quiz-button">Start</a></p>
+                    </div>
+                </div>
                 <!-- article ends -->
             </div>
         </div>
@@ -198,7 +164,9 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
+<script src="https://jchamill.github.io/jquery-quiz/jquery.quiz-min.js"></script>
 <script src="../js/webflow.js" type="text/javascript"></script>
+<script src="../js/quiz.js" type="text/javascript"></script>
 </body>
 
 </html>
