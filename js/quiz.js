@@ -2,124 +2,130 @@ $('#quiz').quiz({
     counterFormat: 'Question %current of %total',
     questions: [
         {
-            'q': 'How many of these statements can be inserted\n' +
-                'after the println to have the code flow from line no. 17 to 15\n' +
-                'in this diagram?\n\n'+
-                'break;\n' +
-                'break letters;\n' +
-                'break numbers;\n' +
-                'continue;\n' +
-                'continue letters;\n' +
-                'continue numbers;\n' +
-                '15: letters: for (char ch = \'a\'; ch <= \'z\'; ch++) {\n' +
-                '16: numbers: for (int n = 0; n<=10; n++) {\n' +
-                '17: System.out.print(ch);\n' +
-                '}\n' +
-                '}',
+            'q': 'What is the output of the following code snippet?\n\n' +
+                'int hops = 0;\n' +
+                'int jumps = 0;\n' +
+                'jumps = hops++;\n' +
+                'if(jumps)\n' +
+                'System.out.print("Jump!");\n' +
+                'else\n' +
+                'System.out.print("Hop!");',
             'options': [
-                'A.One',
-                'B.Two',
-                'C.Three',
-                'D.Four',
-                'E.Five'
+                'A.Jump!',
+                'B.Hop!',
+                'C.The code does not compile.',
+                'D.The code compiles but throws an exception at runtime.',
+                'E.None of the above.'
             ],
             'correctIndex': 2,
             'correctResponse': 'Correct ✅',
-            'incorrectResponse': '❌ C. If the code follows the arrow, then it prints each letter once, breaking out of the inner\n' +
-                'loop on every iteration. Since a break without a label applies to the innermost structure,\n' +
-                'break and break numbers are equivalent, and both of these are correct answers.\n' +
-                'Likewise, continue and continue numbers are both equivalent although both wrong\n' +
-                'in this case since they resume operation of the inner loop. That leaves break letters and\n' +
-                'continue letters. In this case, break letters stops the outer loop after printing just\n' +
-                'one letter, so it is incorrect. On the other hand, continue letters exits the inner loop\n' +
-                'and returns control to the outer loop, which is the desired behavior. Since three statements\n' +
-                'are correct, option C is correct.'
+            'incorrectResponse': '❌ C. The statement if(jumps) evaluates to if(0), and since 0 is not a boolean value, the\n' +
+                'code does not compile. Java requires boolean expressions in if statements.'
         },
         {
-            'q': 'What is the output of the following application?\n\n' +
-                'package dessert;\n' +
-                'public class IceCream {\n' +
-                'public final static void main(String... args) {\n' +
-                'var flavors = 30;\n' +
-                'int eaten = 0;\n' +
-                'switch(flavors) {\n' +
-                'case 30: eaten++;\n' +
-                'case 40: eaten+=2;\n' +
-                'default: eaten--;\n' +
-                '}\n' +
-                'System.out.print(eaten);\n' +
-                '}\n' +
+            'q': 'Which of the following best describes the flow of\nexecution in this for loop if beta always\n' +
+                'returns false?\n\n' +
+                'for (alpha; beta; gamma) {\n' +
+                'delta;\n' +
                 '}',
             'options': [
-                'A.1',
-                'B.2',
-                'C.3',
-                'D.The code does not compile because var cannot be used in a switch statement.',
-                'E.The code does not compile for another reason.',
-                'F.None of the above.'
+                'A.alpha',
+                'B.alpha, beta',
+                'C.alpha, beta, gamma',
+                'D.alpha, gamma',
+                'E.alpha, gamma, beta',
+                'F.None of the above'
             ],
             'correctIndex': 1,
             'correctResponse': 'Good ✅',
-            'incorrectResponse': '❌ B. The code compiles without issue, so options D and E are incorrect. A var can be used in a\n' +
-                'switch statement, provided the underlying type resolves to a supported switch type. Next,\n' +
-                'notice there are no break statements. Once the matching case statement, 30, is reached, all\n' +
-                'remaining case statements will be executed. The variable eaten is increased by 1, then 2,\n' +
-                'then reduced by 1, resulting in a final value of 2, making option B the correct answer.'
+            'incorrectResponse': '❌ B. The initializer, which is alpha, runs first. Then Java checks the condition, which is beta,\n' +
+                'to see whether loop execution should start. Since beta returns false, the loop is never\n' +
+                'entered, and option B is correct.'
         },
         {
-            'q': 'Which of the following statements compile and create infinite loops at runtime?\n',
+            'q': 'Which of the following best describes the flow of\nexecution in this for loop if beta always\n' +
+                'returns false?\n' +
+                'boolean balloonInflated = false;\n' +
+                'do {\n' +
+                'if (!balloonInflated) {\n' +
+                'balloonInflated = true;\n' +
+                'System.out.print("inflate-");\n' +
+                '}\n' +
+                '} while (! balloonInflated);\n' +
+                'System.out.println("done");',
             'options': [
-                'A.do {}',
-                'B.for( : ) {}',
-                'C.while {}',
-                'D.for( ; ; ) {}'
-            ],
-            'correctIndex': 3,
-            'correctResponse': 'Excellent ✅',
-            'incorrectResponse': '❌ D. A while loop and do/while loop both require a boolean expression, making\n' +
-                'options A and C incorrect. Option C is incorrect because a for-\n' +
-                'each statement requires an assignment type and an object to iterate on. Option D is correct\n' +
-                'and shows a traditional for loop with no arguments.'
-        },
-        {
-            'q': 'Which of the following iterates a different number of times than the others?\n',
-            'options': [
-                'A.for (int k=0; k < 5; k++) {}',
-                'B.for (int k=1; k <= 5; k++) {}',
-                'C.int k=0; do { } while(k++ < 5);',
-                'D.int k=0; while (k++ < 5) {}',
-                'E.All of these iterate the same number of times.'
-            ],
-            'correctIndex': 2,
-            'correctResponse': 'Bravo ✅',
-            'incorrectResponse': '❌ C. Option A goes through five indexes on the iterations: 0, 1, 2, 3, and 4. Option B also goes\n' +
-                'through five indexes: 1, 2, 3, 4, and 5. Option D goes through five iterations as well, from 0\n' +
-                'to 4. However, option C goes through six iterations since the loop condition is at the end of\n' +
-                'the loop. Therefore, it is not like the others, and option C is the correct answer.'
-        },
-        {
-            'q': 'What is the output of the following code snippet?\n\n' +
-                'int count = 0;\n' +
-                'var stops = new String[] { "Washington", "Monroe",\n' +
-                '"Jackson", "LaSalle" };\n' +
-                'while (count < stops.length)\n' +
-                'if (stops[++count].length() < 8)\n' +
-                'break;\n' +
-                'else continue;\n' +
-                'System.out.println(count);',
-            'options': [
-                'A.0',
-                'B.1',
-                'C.2',
-                'D.3',
-                'E.The code does not compile.',
-                'F.None of the above.'
+                'A.done',
+                'B.inflate-done',
+                'C.The code does not compile.',
+                'D.This is an infinite loop.',
+                'E.None of the above.'
             ],
             'correctIndex': 1,
+            'correctResponse': 'Excellent ✅',
+            'incorrectResponse': '❌ B. On the first iteration of the loop, the if statement executes and prints inflate-.\n' +
+                'Then the loop condition is checked. The variable balloonInflated is true, so the loop\n' +
+                'condition is false, and the loop completes and done is printed.'
+        },
+        {
+            'q': 'Which of these code snippets behaves differently from the others?\n',
+            'options': [
+                'A.\n' +
+                'if (numChipmunks == 1)\n' +
+                'System.out.println("One chipmunk");\n' +
+                'if (numChipmunks == 2)\n' +
+                'System.out.println("Two chipmunks");\n' +
+                'if (numChipmunks == 3)\n' +
+                'System.out.println("Three chipmunks");',
+                'B.\n' +
+                'switch (numChipmunks) {\n' +
+                'case 1: System.out.println("One chipmunk");\n' +
+                'case 2: System.out.println("Two chipmunks");\n' +
+                'case 3: System.out.println("Three chipmunks");\n' +
+                '}',
+                'C.\n' +
+                'if (numChipmunks == 1)\n' +
+                'System.out.println("One chipmunk");\n' +
+                'else if (numChipmunks == 2)\n' +
+                'System.out.println("Two chipmunks");\n' +
+                'else if (numChipmunks == 3)\n' +
+                'System.out.println("Three chipmunks");',
+                'D.\n' +
+                'All three code snippets do the same thing.'
+            ],
+            'correctIndex': 1,
+            'correctResponse': 'Bravo ✅',
+            'incorrectResponse': '❌ B. Options A and C print one line if numChipmunks is 1, 2, or 3. Option B does not behave\n' +
+                'the same way if numChipmunks is 1 or 2. There is no break statement, so the case state-\n' +
+                'ments fall through, and more than one statement will be printed.'
+        },
+        {
+            'q': 'Given the following enum and class, which option\nfills in the blank and allows the code\n' +
+                'to compile?\n\n' +
+                'enum Season { SPRING, SUMMER, WINTER }\n' +
+                'public class Weather {\n' +
+                'public int getAverageTemperate(Season s) {\n' +
+                'switch (s) {\n' +
+                'default:\n' +
+                '____________ return 30;\n' +
+                '}\n' +
+                '}\n' +
+                '}',
+            'options': [
+                'A.case Season.WINTER:',
+                'B.case WINTER, SPRING:',
+                'C.case SUMMER | WINTER:',
+                'D.case SUMMER ->',
+                'E.case FALL:',
+                'F.None of the above'
+            ],
+            'correctIndex': 5,
             'correctResponse': 'Perfect ✅',
-            'incorrectResponse': '❌ B. On the first iteration of the loop, stops[++count] evaluates to stops[1], while also\n' +
-                'setting count to 1. Since stops[1] is Monroe and it has six characters, the break is\n' +
-                'reached, and the loop stops. For this reason, 1 is printed, making option B correct.'
+            'incorrectResponse': '❌ F. Option A is incorrect because the enum type Season is not used within a case statement.\n' +
+                'If it were just case WINTER:, then it would compile. Options B and C do not compile\n' +
+                'because switch statements do not support multiple values within a case statement. Option\n' +
+                'D is incorrect because -> is used instead of :. Option E is incorrect because FALL is not\n' +
+                'defined in the list of values for the enum Season. Since none of the lines of code is correct,\n' +
+                'option F is correct.'
         }
     ]
 });
