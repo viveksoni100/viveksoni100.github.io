@@ -43,8 +43,7 @@ $('#quiz').quiz({
                 'entered, and option B is correct.'
         },
         {
-            'q': 'Which of the following best describes the flow of\nexecution in this for loop if beta always\n' +
-                'returns false?\n' +
+            'q': 'What will be the output of the following code?\n' +
                 'boolean balloonInflated = false;\n' +
                 'do {\n' +
                 'if (!balloonInflated) {\n' +
