@@ -1,31 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://whywhytechnova.com/">
-    <url>
-        <loc>https://whywhytechnova.com/blogs/keycloak-identity-and-access-management.html</loc>
-        <priority>0.007</priority>
-    </url>
-    <url>
-        <loc>https://whywhytechnova.com/blogs/full-stack-application-using-jhipster.html</loc>
-        <priority>0.006</priority>
-    </url>
-    <url>
-        <loc>https://whywhytechnova.com/blogs/software-crafting-using-clean-code-3.html</loc>
-        <priority>0.005</priority>
-    </url>
-    <url>
-        <loc>https://whywhytechnova.com/blogs/software-crafting-using-clean-code-2.html</loc>
-        <priority>0.004</priority>
-    </url>
-    <url>
-        <loc>https://whywhytechnova.com/blogs/software-crafting-using-clean-code-1.html</loc>
-        <priority>0.003</priority>
-    </url>
-    <url>
-        <loc>https://whywhytechnova.com/blogs/benefits-of-using-linux.html</loc>
-        <priority>0.002</priority>
-    </url>
-    <url>
-        <loc>https://whywhytechnova.com/blogs/how-blackhole-captured-in-photo.html</loc>
-        <priority>0.001</priority>
-    </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://whywhytechnova.com/</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/index.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/about.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/contact.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blog.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/daily-java-quiz.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/daily-java-qna.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/policy.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/ChatGPT-smart-tips-for-efficient-coding.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/ChatGPT-smart-tips-for-efficient-conversations.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/keycloak-identity-and-access-management.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/full-stack-application-using-jhipster.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/software-crafting-using-clean-code-3.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/software-crafting-using-clean-code-2.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/software-crafting-using-clean-code-1.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/benefits-of-using-linux.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/how-blackhole-captured-in-photo.html</loc>
+  <lastmod>2023-04-06T14:21:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
