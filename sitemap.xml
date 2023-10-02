@@ -46,6 +46,16 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://whywhytechnova.com/blogs/mastering-javas-builder-pattern-a-deep-dive.html</loc>
+  <lastmod>02/10/2023</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://whywhytechnova.com/blogs/demystifying-static-factory-methods-in-java.html</loc>
+  <lastmod>02/10/2023</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://whywhytechnova.com/blogs/the-easiest-way-to-implement-swagger-api-documentation.html</loc>
   <lastmod>16/04/2023</lastmod>
   <priority>0.64</priority>
