@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html data-wf-page="5d71d4f8a19ee00c4530b26f" data-wf-site="5d71d4f8a19ee0afc230b258">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1375036880340384"
+          crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <title>Integrating ChatGPT with Spring Boot: A Simple Guide</title>
+  <meta name="description" content="Discover a seamless way to integrate ChatGPT into your Spring Boot application with this easy-to-follow guide. Enhance your projects with conversational AI effortlessly">
+  <meta name="keywords" content="ChatGPT, Spring Boot, Chatbot Integration, Conversational AI, Java Development, OpenAI API, Application Integration, Spring Boot Tutorial, Chatbot Development, AI-powered Chatbot, Spring Boot Framework, API Integration, Java Chatbot, Conversational Agent, Developer Guide, AI Integration, Chatbot Development in Java, OpenAI ChatGPT, API Key Management, Application Enhancement">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <meta name="image" property="og:image" content="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Integrating ChatGPT with Spring Boot: A Simple Guide">
+  <meta property="og:description" content="Discover a seamless way to integrate ChatGPT into your Spring Boot application with this easy-to-follow guide. Enhance your projects with conversational AI effortlessly">
+  <meta property="og:url" content="https://whywhytechnova.com/blogs/integrating-chatgpt-with-springboot-a-simple-guide.html">
+  <meta property="og:site_name" content="WhyWhyTechnova">
+  <meta property="article:tag" content="AI & ML">
+  <meta property="article:section" content="Chatbot">
+  <meta property="article:published_time" content="2023-04-16T01:05:18+00:00">
+  <meta property="article:modified_time" content="2023-04-16T01:05:18+00:00">
+  <meta property="og:updated_time" content="2023-04-16T01:05:18+00:00">
+  <meta name='robots' content='index, follow' />
+  <meta name="geo.region" content="IND-GUJ" />
+  <meta name="geo.placename" content="Ahmedabad" />
+  <meta name="geo.position" content="-23.038940; 72.554950 " />
+  <link rel=canonical href=https://whywhytechnova.com/blogs/integrating-chatgpt-with-springboot-a-simple-guide.html>
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/vivek-soni.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <script src="http://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script
+    type="text/javascript">WebFont.load({ google: { families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Merriweather:300,300italic,400,400italic,700,700italic,900,900italic", "Gothic A1:100,200,300,regular,500,600,700,800,900"] } });</script>
+  <script
+    type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
+  <link href="../icons/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="../icons/favicon.png" rel="apple-touch-icon">
+  <style type="text/css">
+    .code {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-left: 3px solid #f36d33;
+      color: #666;
+      page-break-inside: avoid;
+      font-family: monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 1.6em;
+      max-width: 100%;
+      overflow: auto;
+      padding: 1em 1.5em;
+      display: block;
+      word-wrap: break-word;
+    }
+  </style>
+  <script defer type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress":"Sitaram Pandit Marg",
+        "addressLocality":"Ring Road",
+        "addressRegion":"Ring Road,Rajkot",
+        "postalCode":"360001",
+        "addressCountry":"India"
+      },
+      "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png",
+      "email": "info@whywhytechnova.com",
+      "sameAs" : [ "https://www.facebook.com/vivek.barbhaya,https://www.instagram.com/vivek_soni_100/,https://www.linkedin.com/in/vivek-soni-797451178/,https://join.skype.com/invite/weh9XYJ3okdJ,https://mobile.twitter.com/vickyvivek100" ],
+      "faxNumber": "88661 28862",
+      "member": [
+        {
+          "@type": "Organization"
+        }
+      ],
+      "alumni": [
+        {
+          "@type": "Person",
+          "name": "Vivek Soni"
+        }
+      ],
+      "name": "whywhytechnova - India",
+      "telephone": "88661 28862"
+    }
+  </script>
+  <script type="application/ld+json">{
+    "@context":"http://schema.org",
+    "@type":"LocalBusiness",
+    "image":[ "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png" ],
+    "name":"whywhytechnova",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Sitaram Pandit Marg",
+      "addressLocality":"Ring Road",
+      "addressRegion":"Ring Road ,Rajkot",
+      "postalCode":"360001",
+      "addressCountry":"India"
+    },
+    "priceRange":"Contact Us",
+    "geo":{
+      "@type":"GeoCoordinates",
+      "latitude": "23.0314299",
+      "longitude": "72.5632723"
+    },
+    "url":"https://whywhytechnova.com",
+    "telephone":"+91 88661 28862",
+    "email":"info@whywhytechnova.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4/5",
+      "reviewCount": "112"
+    },
+    "sameAs" : [ "https://www.facebook.com/vivek.barbhaya,https://www.instagram.com/vivek_soni_100/,https://www.linkedin.com/in/vivek-soni-797451178/,https://join.skype.com/invite/weh9XYJ3okdJ,https://mobile.twitter.com/vickyvivek100" ]
+  }
+  </script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type": "Website",
+    "name": "whywhytechnova",
+    "url": "https://whywhytechnova.com",
+    "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png"
+  }
+  </script>
+  <script type="application/ld+json">{
+    "@context":"http://schema.org",
+    "@type":"PostalAddress",
+    "name":"whywhytechnova",
+    "streetAddress":"Sitaram Pandit Marg",
+    "addressLocality":"Ring Road",
+    "addressRegion":"Ring Road, Rajkot",
+    "postalCode":"360001",
+    "addressCountry":"India",
+    "telephone":"+91 88661 28862",
+    "email":"info@whywhytechnova.com"
+  }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png",
+        "name": "whywhytechnova",
+        "priceRange": "$$$",
+        "telephone": "88661 28862",
+        "address" :{
+          "@type": "PostalAddress",
+          "streetAddress": "Sitaram Pandit Marg",
+          "addressLocality": "Ring Road",
+          "addressRegion":"Ring Road, Rajkot",
+          "postalCode": "360001",
+          "addressCountry": "India"
+        }
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.4"
+      },
+      "name": "whywhytechnova",
+      "author": {
+        "@type": "Person",
+        "name": "Vivek Soni"
+      }
+    }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "whywhytechnova",
+      "url": "https://whywhytechnova.com"
+    }
+  </script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "WebPage",
+    "genre": "https://whywhytechnova.com",
+    "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="section-header is-sticky">
+    <div class="container space-between">
+      <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
+        <div class="navbar-container style2 w-container">
+          <a href="../index.html" class="brand order-first w-nav-brand w--current">
+            <h3 class="logotype">Vivek Soni &nbsp; </h3>
+          </a>
+          <nav role="navigation" class="nav-menu order-last w-nav-menu">
+            <a href="../about.html" class="nav-link w-nav-link">About</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact</a>
+            <a href="../blog.html" class="nav-link w-nav-link w--current">Blog</a>
+            <a href="daily-java-quiz.html" class="nav-link w-nav-link">Quiz</a>
+            <a href="daily-java-qna.html" class="nav-link w-nav-link">Q&A</a>
+            <a href="../policy.html" class="nav-link w-nav-link">Privacy Policy</a>
+          </nav>
+          <div class="menu-button order-last w-nav-button"><img src="../images/burger-menu-icon-white-1.svg" width="22"
+                                                                alt="" class="burger-menu-icon white"><img
+                  src="../images/burger-menu-icon-1.svg" width="22" alt=""
+                  class="burger-menu-icon"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section is-header position-relative">
+    <div class="container">
+      <div class="col lg-12">
+        <div class="breadcrumb margin-bottom-double"><a href="../index.html">Home</a><span
+                class="fa margin-left-small margin-right-small is-xsmall w--current"></span><a href="../blog.html">Blog</a><span
+            class="fa margin-left-small margin-right-small is-xsmall"></span>ChatGPT API Integration</div>
+        <h1 class="heading-beta">Integrating ChatGPT with Spring Boot: A Simple Guide</h1>
+      </div>
+    </div>
+    <div class="container flex-horizontal margin-bottom-double"></div>
+    <div class="container margin-bottom-double">
+      <div class="col lg-12">
+        <div class="c-article__date">14 October 2023</div>
+        <div class="c-article__date-divider"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col lg-3 md-12 md-order-last">
+        <div class="c-article__related">
+          <div class="margin-bottom-double text-small weight-is-black low-text-contrast"></div>
+          <div data-delay="3000" data-animation="slide" data-autoplay="1" data-duration="500" data-infinite="1"
+            class="c-article_related-slider w-slider">
+            <div class="w-slider-mask">
+              <div class="w-slide">
+                <div>
+                  <h4 class="margin-bottom">In today's world, chatbots and AI-powered conversational agents have become a vital component of applications, providing efficient and engaging user interactions. OpenAI's ChatGPT is at the forefront of this AI revolution, offering a powerful conversational AI model that can be seamlessly integrated into your Java applications with Spring Boot. In this blog, we will walk you through the process of integrating OpenAI's ChatGPT API into a Spring Boot application to create a responsive chatbot.</h4>
+                  <div class="text-small low-text-contrast"></div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden w-slider-arrow-left">
+              <div class="w-icon-slider-left"></div>
+            </div>
+            <div class="hidden w-slider-arrow-right">
+              <div class="w-icon-slider-right"></div>
+            </div>
+            <div class="c-article_related-slider-nav w-slider-nav w-slider-nav-invert w-round"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col lg-1 no-margin-bottom"></div>
+      <div class="col lg-8 md-12" style="overflow: auto;">
+        <div class="rich-text w-richtext">
+          <!-- article starts -->
+
+            <p>In the world of software development, chatbots and conversational interfaces have become increasingly popular for providing efficient and engaging user experiences. Leveraging AI-powered chatbots is a valuable addition to any application, and OpenAI's GPT-3-based model, ChatGPT, is at the forefront of this revolution. In this blog post, we'll explore how to integrate ChatGPT with a Spring Boot application, creating a powerful conversational agent.</p>
+            <h3>Step-1 Spring Boot Project Setup</h3>
+            <p>Create a new spring boot project using your preferred IDE or Spring Initializer</p>
+            <p>Add the necessary dependencies for Spring Web in the pom.xml file</p>
+
+            <h3>Step-2 Create config class</h3>
+            <p>Create a config class with the bean which will be returning RestTemplate</p>
+            <p>User the proper annotations required</p>
+
+            <pre class="code">
+            package com.demo.chatgptintegration.config;
+
+            import org.springframework.context.annotation.Bean;
+            import org.springframework.context.annotation.Configuration;
+            import org.springframework.web.client.RestTemplate;
+
+            /**
+             * @author viveksoni
+             */
+
+            @Configuration
+            public class ServiceConfig {
+
+                /**
+                 * we are using RestTemplate to process OpenAI's API
+                 */
+                @Bean
+                public RestTemplate restTemplate() {
+                    return new RestTemplate();
+                }
+            }
+            </pre>
+
+          <h3>Step-3 OpenAI API Setup</h3>
+          <p>Create a service class which will be accepting the string passed by the user</p>
+          <pre class="code">
+          package com.demo.chatgptintegration.service;
+
+          import com.demo.chatgptintegration.dto.GptRequest;
+          import com.demo.chatgptintegration.dto.Message;
+          import org.springframework.beans.factory.annotation.Autowired;
+          import org.springframework.beans.factory.annotation.Value;
+          import org.springframework.http.HttpEntity;
+          import org.springframework.http.HttpHeaders;
+          import org.springframework.http.MediaType;
+          import org.springframework.stereotype.Service;
+          import org.springframework.web.client.RestTemplate;
+
+          import java.util.Arrays;
+
+          /**
+           * @author viveksoni
+           */
+
+          @Service
+          public class OpenAIService {
+
+              @Autowired
+              private RestTemplate restTemplate;
+
+              @Value("${openai.api.key}")
+              private String apiKey;
+
+              private String url = "https://api.openai.com/v1/chat/completions";
+              private String modelId = "gpt-3.5-turbo";
+
+              public String openAIServiceCall(String userInput) {
+
+                  var headers = new HttpHeaders();
+                  headers.setContentType(MediaType.APPLICATION_JSON);
+                  headers.set("Authorization", "Bearer " + apiKey);
+
+                  var requestBody = "{\"model\": \"" + modelId + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + userInput + "\"}]}";
+
+                  HttpEntity&lt;String&gt; request = new HttpEntity<>(requestBody, headers);
+
+                  var response = restTemplate.postForObject(url, request, String.class);
+
+                  return response;
+              }
+
+          }
+          </pre>
+          <p>Generate API key from the OpenAI portal</p>
+          <p>visit <a href="https://platform.openai.com/">https://platform.openai.com/</a> Login or Sign up then go to View API keys from the menu</p>
+
+          <center><img src="../images/blogs-img/b_17/1.webp"
+                       alt="OpenAI Portal"
+                       class="responsive"></center>
+
+          <p>create new secret key</p>
+
+          <center><img src="../images/blogs-img/b_17/2.webp"
+                       alt="OpenAI Portal"
+                       class="responsive"></center>
+
+          <p>Choose Model Id from the OpenAI portal</p>
+
+          <center><img src="../images/blogs-img/b_17/3.webp"
+                       alt="OpenAI Portal"
+                       class="responsive"></center>
+
+          <h3>Step-4 Implement the ChatController</h3>
+          <p>Create a new class called ChatController with the necessary annotations</p>
+          <p>Implement an endpoint to receive chat messages as a GET request</p>
+          <p>Use RestTemplate to make a POST request to the ChatGPT API endpoint</p>
+          <p>Handle the API response and return it to the client</p>
+
+          <pre class="code">
+          package com.demo.chatgptintegration.controller;
+
+          import com.demo.chatgptintegration.service.OpenAIService;
+          import org.springframework.beans.factory.annotation.Autowired;
+          import org.springframework.web.bind.annotation.GetMapping;
+          import org.springframework.web.bind.annotation.RequestParam;
+          import org.springframework.web.bind.annotation.RestController;
+
+          /**
+           * @author viveksoni
+           */
+
+          @RestController
+          public class ChatController {
+
+              @Autowired
+              OpenAIService service;
+
+              @GetMapping("/chat")
+              public String callingAI(@RequestParam("userInput") String userInput) {
+                  String response = service.openAIServiceCall(userInput);
+                  return response;
+              }
+
+          }
+          </pre>
+
+          <h3>Step-5 Test the API using Swagger or Postman</h3>
+
+          <p>http://localhost:9090/chat?userInput=tell%20me%20a%20joke</p>
+
+          <center><img src="../images/blogs-img/b_17/4.webp"
+                         alt="swagger ui screen shot"
+                         class="responsive"></center>
+          <br>
+          <center><img src="../images/blogs-img/b_17/5.webp"
+                       alt="swagger ui screen shot"
+                       class="responsive"></center>
+
+
+          <br>
+          <h3>Conclusion</h3>
+
+          <p>In this simple guide, we've explored the seamless integration of ChatGPT, OpenAI's powerful conversational AI model, into Spring Boot applications. The fusion of ChatGPT's natural language processing capabilities with Spring Boot's robust framework empowers developers to create sophisticated chatbots, virtual assistants, and conversational interfaces with ease.</p>
+
+          <p>The integration of ChatGPT with Spring Boot opens up a world of possibilities for engaging, interactive, and intelligent applications. Whether you're building customer support bots, creative writing assistants, or anything in between, ChatGPT integration in Spring Boot is a powerful tool in your development arsenal. We hope this simple guide has equipped you with the knowledge and confidence to embark on this exciting journey of creating conversational experiences that leave a lasting impact on your users.</p>
+            <hr>
+            <p><a href="https://github.com/viveksoni100/chatgpt-integration"><span style="text-align: left">source code</span></a></p>
+          <!-- article ends -->
+        </div>
+      </div>
+    </div>
+    <div class=" decoration-rightside hidden-md">
+        </div>
+      </div>
+      <div class="section is-dark no-padding-bottom">
+        <div class="container">
+          <div class="col text-align-center lg-7 block-centered no-margin-bottom md-12">
+            <div class="pre-title">Get in touch</div>
+            <h2>Let’s work together</h2>
+            <div class="text-medium margin-bottom">Reach out if you have a concept for a website or mobile app or
+              require
+              guidance with product design. <a href="mailto:info@whywhytechnova.com"><strong>contact me.</strong></a>
+            </div>
+            <a href="mailto:info@whywhytechnova.com" class="button-primary margin-bottom-double w-inline-block">
+              <div class="button-primary-text lowercase"><i
+                  class="fas fa-envelope"></i>&nbsp;&nbsp;info@whywhytechnova.com
+              </div>
+            </a>
+            <a href="#" class="button-primary margin-bottom-double w-inline-block"
+              style="background-color: #fdf556; color: #000000;">
+              <div class="button-primary-text lowercase"><i class="fas fa-mobile"></i>&nbsp;&nbsp;+(91) 88661 28862
+              </div>
+            </a>
+            <div class="flexh-space-between maxwidth300 margin-bottom-double">
+              <a href="https://www.facebook.com/vivek.barbhaya" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/vivek_soni_100/" target="_blank"><i class="fab fa-instagram "></i></a>
+              <a href="https://github.com/viveksoni100" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/vivek-soni-797451178/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://join.skype.com/invite/weh9XYJ3okdJ" target="_blank"><i class="fab fa-skype"></i></a>
+              <a href="https://mobile.twitter.com/vickyvivek100" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+      <script src="../js/webflow.js" type="text/javascript"></script>
+</body>
+
+</html>
