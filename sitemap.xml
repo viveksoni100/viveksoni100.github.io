@@ -46,6 +46,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://whywhytechnova.com/blogs/exploring-the-singleton-pattern-in-java.html</loc>
+  <lastmod>17/10/2023</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://whywhytechnova.com/blogs/integrating-chatgpt-with-springboot-a-simple-guide.html</loc>
   <lastmod>14/10/2023</lastmod>
   <priority>0.64</priority>
