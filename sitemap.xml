@@ -46,6 +46,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://whywhytechnova.com/blogs/crud-operations-in-mongodb-with-springboot.html</loc>
+  <lastmod>04/11/2023</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://whywhytechnova.com/blogs/exploring-the-singleton-pattern-in-java.html</loc>
   <lastmod>17/10/2023</lastmod>
   <priority>0.64</priority>
