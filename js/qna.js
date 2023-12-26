@@ -2,78 +2,61 @@ $('#quiz').quiz({
     counterFormat: 'Question %current of %total',
     questions: [
         {
-            'q': 'Why it is not possible to do method overloading by changing\n' +
-                'return type of method in java?\n',
+            'q': 'What is an abstract class in Java?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'If we change the return type of overloaded methods then it will lead\n' +
-                'to ambiguous behavior. How will clients know which method will\n' +
-                'return what type. Due to this different return type are not allowed in\n' +
-                'overloaded methods.',
+            'correctResponse': 'An abstract class in Java has one or more abstract methods. An\n' +
+                'abstract method is just declared in the abstract class, but it is not\n' +
+                'implemented.\n\n' +
+                'An abstract class has to be extended in Java and its abstract\n' +
+                'methods have to be implemented by a child class. Also Java does\n' +
+                'not allow new instance of Abstract class.\nn' +
+                'You cannot create an instance of an abstract class in Java because abstract classes are not meant to be instantiated. They are designed to be extended by subclasses that provide implementations for the abstract methods. Abstract classes define a common interface and behavior for a group of related classes, but they do not provide a complete implementation.',
             'incorrectResponse': ''
         },
         {
-            'q': 'Are we allowed to override a static method in Java?\n',
+            'q': 'Is it allowed to mark an interface method as static?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'No. Java does not allow overriding a static method. If you create a\n' +
-                'static method with same name in subclass, then it is a new method,\n' +
-                'not an overridden method.\n' +
-                'To override a method, you need an instance of a class. Static method\n' +
-                'is not associated with any instance of the class. So the concept of\n' +
-                'overriding does not apply here.',
+            'correctResponse': 'Yes, from Java 8 onwards, we can define static and default methods\n' +
+                'in an interface. Prior to Java 8, it was not allowed.',
             'incorrectResponse': ''
         },
         {
-            'q': 'What is the difference between method overloading and method\n' +
-                'overriding in Java?\n',
+            'q': 'What is a marker interface?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': '1. Method overloading is static polymorphism. Method\n' +
-                'overriding is runtime polymorphism.\n' +
-                '2. Method overloading occurs within the same class. Method\n' +
-                'overriding happens in two classes with hierarchy\n' +
-                'relationship.\n' +
-                '3. Parameters must be different in method overloading.\n' +
-                'Parameters must be same in method overriding.\n' +
-                '4. Method overloading is a compile time concept. Method\n' +
-                'overriding is a runtime concept.',
+            'correctResponse': 'There are interfaces that do not have any data member or methods.\n' +
+                'These interfaces are called Marker interface.\n' +
+                'E.g. Serializable, Cloneable, Remote etc.',
             'incorrectResponse': ''
         },
         {
-            'q': 'What is Runtime Polymorphism?\n',
+            'q': 'What can we use instead of Marker interface?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Runtime Polymorphism or Dynamic Polymorphism is the\n' +
-                'polymorphism that exists at runtime. In case of method overriding it\n' +
-                'is not known which method will be called at runtime. Based on the\n' +
-                'type of object, JVM decides the exact method that should be called.\n' +
-                'So at compile time it is not known which method will be called at\n' +
-                'run time.',
+            'correctResponse': 'We can use annotations instead of Marker interface.',
             'incorrectResponse': ''
         },
         {
-            'q': 'Explain the difference between static and dynamic binding?\n',
+            'q': 'How Annotations are better than Marker Interfaces?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'In Static binding references are resolved at compile time. In\n' +
-                'Dynamic binding references are resolved at Run time.\n\n' +
-                'E.g.\n' +
-                'Person p = new Person();\n' +
-                'p.walk(); // Java compiler resolves this binding at compile time.\n\n' +
-                'public void walk(Object o){\n' +
-                '((Person) o).walk(); // this is dynamic binding.\n' +
-                '}',
+            'correctResponse': 'Annotations serve the purpose of conveying metadata about the\n' +
+                'class to its consumers without creating a separate type for it.\n' +
+                'Annotations are more powerful than a Marker interface. They allow\n' +
+                'programmers to pass more sophisticated information to classes that\n' +
+                '"consume" it.',
             'incorrectResponse': ''
         }
     ]
