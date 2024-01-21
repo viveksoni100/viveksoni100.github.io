@@ -2,61 +2,72 @@ $('#quiz').quiz({
     counterFormat: 'Question %current of %total',
     questions: [
         {
-            'q': 'What is an abstract class in Java?\n',
+            'q': 'What is the difference between\n' +
+                'abstract class and interface in Java?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'An abstract class in Java has one or more abstract methods. An\n' +
-                'abstract method is just declared in the abstract class, but it is not\n' +
-                'implemented.\n\n' +
-                'An abstract class has to be extended in Java and its abstract\n' +
-                'methods have to be implemented by a child class. Also Java does\n' +
-                'not allow new instance of Abstract class.\nn' +
-                'You cannot create an instance of an abstract class in Java because abstract classes are not meant to be instantiated. They are designed to be extended by subclasses that provide implementations for the abstract methods. Abstract classes define a common interface and behavior for a group of related classes, but they do not provide a complete implementation.',
+            'correctResponse': '1. An abstract class can have implemented methods with\n' +
+                'body (non-abstract methods). Interface has only abstract\n' +
+                'methods. From Java 8 onwards, interface can have\n' +
+                'static/default methods in implemented form.\n' +
+                '2. An abstract class can have instance member variables. An\n' +
+                'interface cannot have instance variables. It can only have\n' +
+                'constants.\n' +
+                '3. An abstract class can have a constructor. Interface cannot\n' +
+                'have constructor. It has to be implemented by another\n' +
+                'class.\n' +
+                '4. A class can extend only one abstract class. A class can\n' +
+                'implement more than one interface.',
             'incorrectResponse': ''
         },
         {
-            'q': 'Is it allowed to mark an interface method as static?\n',
+            'q': 'How can we cast to an object\n' +
+                'reference to an interface reference?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Yes, from Java 8 onwards, we can define static and default methods\n' +
-                'in an interface. Prior to Java 8, it was not allowed.',
+            'correctResponse': 'An Object that implements an Interface can be cast to the same\n' +
+                'Interface. Since An Object implementing an Interface already\n' +
+                'provides implementation for the methods of that Interface, it is\n' +
+                'allowed to do so as per the rules of Inheritance.',
             'incorrectResponse': ''
         },
         {
-            'q': 'What is a marker interface?\n',
+            'q': 'How can you change the value of a\n' +
+                'final variable in Java?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'There are interfaces that do not have any data member or methods.\n' +
-                'These interfaces are called Marker interface.\n' +
+            'correctResponse': 'Java does not allow changing the value of a final variable. Once the\n' +
+                'value is set, it cannot be changed.' +
                 'E.g. Serializable, Cloneable, Remote etc.',
             'incorrectResponse': ''
         },
         {
-            'q': 'What can we use instead of Marker interface?\n',
+            'q': 'Why Integer class in final in Java?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'We can use annotations instead of Marker interface.',
+            'correctResponse': 'Integer class is a wrapper for int. If it is not marked final, then any\n' +
+                'other class can extend it and modify the behavior of Integer\n' +
+                'operations. To avoid this Integer wrapper class is marked as final.',
             'incorrectResponse': ''
         },
         {
-            'q': 'How Annotations are better than Marker Interfaces?\n',
+                'q': 'What is a static import in Java?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Annotations serve the purpose of conveying metadata about the\n' +
-                'class to its consumers without creating a separate type for it.\n' +
-                'Annotations are more powerful than a Marker interface. They allow\n' +
-                'programmers to pass more sophisticated information to classes that\n' +
-                '"consume" it.',
+            'correctResponse': 'Static import is similar to normal import declaration. Normal\n' +
+                'import allows us to import classes from packages without using\n' +
+                'package qualifier. Static import allows us to import static members\n' +
+                'from a class without using class qualifier.',
             'incorrectResponse': ''
         }
     ]
