@@ -2,72 +2,65 @@ $('#quiz').quiz({
     counterFormat: 'Question %current of %total',
     questions: [
         {
-            'q': 'What is the difference between\n' +
-                'abstract class and interface in Java?\n',
+            'q': 'What is the purpose of serialization?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': '1. An abstract class can have implemented methods with\n' +
-                'body (non-abstract methods). Interface has only abstract\n' +
-                'methods. From Java 8 onwards, interface can have\n' +
-                'static/default methods in implemented form.\n' +
-                '2. An abstract class can have instance member variables. An\n' +
-                'interface cannot have instance variables. It can only have\n' +
-                'constants.\n' +
-                '3. An abstract class can have a constructor. Interface cannot\n' +
-                'have constructor. It has to be implemented by another\n' +
-                'class.\n' +
-                '4. A class can extend only one abstract class. A class can\n' +
-                'implement more than one interface.',
+            'correctResponse': '1. Communication: It is used for transmitting an object over\n' +
+                'network between two machines.\n' +
+                '2. Persistence: We can store the object’s state in a database\n' +
+                'and retrieve it from database later on.\n' +
+                '3. Caching: Serialization can be used for caching to improve\n' +
+                'performance. We may need 10 minutes to build an object,\n' +
+                'but it may take just 10 seconds to de-serialize the object.\n' +
+                '4. Cross JVM Synchronization: It can be used in same way\n' +
+                'across multiple JVM that follow different architecture.',
             'incorrectResponse': ''
         },
         {
-            'q': 'How can we cast to an object\n' +
-                'reference to an interface reference?\n',
+            'q': 'Why do we mark a data member transient?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'An Object that implements an Interface can be cast to the same\n' +
-                'Interface. Since An Object implementing an Interface already\n' +
-                'provides implementation for the methods of that Interface, it is\n' +
-                'allowed to do so as per the rules of Inheritance.',
+            'correctResponse': 'Member variables of an object are marked transient to indicate that\n' +
+                'they should not be serialized.' +
+                'During serialization process the transient variables are not\n' +
+                'considered part of the persistent state of an object.',
             'incorrectResponse': ''
         },
         {
-            'q': 'How can you change the value of a\n' +
-                'final variable in Java?\n',
+            'q': 'Is it allowed to mark a method as transient?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Java does not allow changing the value of a final variable. Once the\n' +
-                'value is set, it cannot be changed.' +
-                'E.g. Serializable, Cloneable, Remote etc.',
+            'correctResponse': 'No, Java does not allow marking a method as transient. The\n' +
+                'transient keyword is valid only for member variables.',
             'incorrectResponse': ''
         },
         {
-            'q': 'Why Integer class in final in Java?\n',
+            'q': 'What is Reflection in Java?\n',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Integer class is a wrapper for int. If it is not marked final, then any\n' +
-                'other class can extend it and modify the behavior of Integer\n' +
-                'operations. To avoid this Integer wrapper class is marked as final.',
+            'correctResponse': 'Reflection is Java language\'s ability to inspect and dynamically call\n' +
+                'classes, methods, attributes etc. at Runtime. It helps in examining or\n' +
+                'modifying the Runtime behavior of a class at Runtime.',
             'incorrectResponse': ''
         },
         {
-                'q': 'What is a static import in Java?\n',
+                'q': 'How can we create an Object\n' +
+                    'dynamically at Runtime in Java?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Static import is similar to normal import declaration. Normal\n' +
-                'import allows us to import classes from packages without using\n' +
-                'package qualifier. Static import allows us to import static members\n' +
-                'from a class without using class qualifier.',
+            'correctResponse': 'We can use Reflection to create an Object dynamically at Runtime\n' +
+                'in Java. We can use Class.newInstance() or Constructor.newInstance()\n' +
+                'methods for creating such Objects from a class without using class qualifier.',
             'incorrectResponse': ''
         }
     ]
