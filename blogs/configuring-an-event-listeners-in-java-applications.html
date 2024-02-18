@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html data-wf-page="5d71d4f8a19ee00c4530b26f" data-wf-site="5d71d4f8a19ee0afc230b258">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1375036880340384"
+          crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <title>Simplified Email Notification Setup: Configuring Event Listeners in Java Applications</title>
+  <meta name="description" content="In modern software development, keeping users informed about system events is crucial for providing a seamless user experience. Email notifications remain a widely used method for alerting users about important updates, reminders, or any other relevant information. In Java applications, configuring an event listener for email notifications can enhance user engagement and satisfaction. In this blog post, we'll explore how to set up an event listener for email notifications in a Java application.">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <meta name="image" property="og:image" content="https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Simplified Email Notification Setup: Configuring Event Listeners in Java Applications">
+  <meta property="og:description" content="In modern software development, keeping users informed about system events is crucial for providing a seamless user experience. Email notifications remain a widely used method for alerting users about important updates, reminders, or any other relevant information. In Java applications, configuring an event listener for email notifications can enhance user engagement and satisfaction. In this blog post, we'll explore how to set up an event listener for email notifications in a Java application.">
+  <meta property="og:url" content="https://whywhytechnova.com/blogs/configuring-an-event-listeners-in-java-applications.html">
+  <meta property="og:site_name" content="WhyWhyTechnova">
+  <meta property="article:tag" content="Java Programming">
+  <meta property="article:section" content="ApplicationEventListener">
+  <meta property="article:published_time" content="2024-02-18T01:05:18+00:00">
+  <meta property="article:modified_time" content="2024-02-18T01:05:18+00:00">
+  <meta property="og:updated_time" content="2024-02-18T01:05:18+00:00">
+  <meta name='robots' content='index, follow' />
+  <meta name="geo.region" content="IND-GUJ" />
+  <meta name="geo.placename" content="Ahmedabad" />
+  <meta name="geo.position" content="-23.038940; 72.554950 " />
+  <link rel=canonical href=https://whywhytechnova.com/blogs/configuring-an-event-listeners-in-java-applications.html>
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/vivek-soni.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <script src="http://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script
+    type="text/javascript">WebFont.load({ google: { families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Merriweather:300,300italic,400,400italic,700,700italic,900,900italic", "Gothic A1:100,200,300,regular,500,600,700,800,900"] } });</script>
+  <script
+    type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
+  <link href="../icons/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="../icons/favicon.png" rel="apple-touch-icon">
+  <style type="text/css">
+    .code {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-left: 3px solid #f36d33;
+      color: #666;
+      page-break-inside: avoid;
+      font-family: monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 1.6em;
+      max-width: 100%;
+      overflow: auto;
+      padding: 1em 1.5em;
+      display: block;
+      word-wrap: break-word;
+    }
+  </style>
+  <script defer type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress":"Sitaram Pandit Marg",
+        "addressLocality":"Ring Road",
+        "addressRegion":"Ring Road,Rajkot",
+        "postalCode":"360001",
+        "addressCountry":"India"
+      },
+      "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png",
+      "email": "info@whywhytechnova.com",
+      "sameAs" : [ "https://www.facebook.com/vivek.barbhaya,https://www.instagram.com/vivek_soni_100/,https://www.linkedin.com/in/vivek-soni-797451178/,https://join.skype.com/invite/weh9XYJ3okdJ,https://mobile.twitter.com/vickyvivek100" ],
+      "faxNumber": "88661 28862",
+      "member": [
+        {
+          "@type": "Organization"
+        }
+      ],
+      "alumni": [
+        {
+          "@type": "Person",
+          "name": "Vivek Soni"
+        }
+      ],
+      "name": "whywhytechnova - India",
+      "telephone": "88661 28862"
+    }
+  </script>
+  <script type="application/ld+json">{
+    "@context":"http://schema.org",
+    "@type":"LocalBusiness",
+    "image":[ "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png" ],
+    "name":"whywhytechnova",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Sitaram Pandit Marg",
+      "addressLocality":"Ring Road",
+      "addressRegion":"Ring Road ,Rajkot",
+      "postalCode":"360001",
+      "addressCountry":"India"
+    },
+    "priceRange":"Contact Us",
+    "geo":{
+      "@type":"GeoCoordinates",
+      "latitude": "23.0314299",
+      "longitude": "72.5632723"
+    },
+    "url":"https://whywhytechnova.com",
+    "telephone":"+91 88661 28862",
+    "email":"info@whywhytechnova.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4/5",
+      "reviewCount": "112"
+    },
+    "sameAs" : [ "https://www.facebook.com/vivek.barbhaya,https://www.instagram.com/vivek_soni_100/,https://www.linkedin.com/in/vivek-soni-797451178/,https://join.skype.com/invite/weh9XYJ3okdJ,https://mobile.twitter.com/vickyvivek100" ]
+  }
+  </script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type": "Website",
+    "name": "whywhytechnova",
+    "url": "https://whywhytechnova.com",
+    "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png"
+  }
+  </script>
+  <script type="application/ld+json">{
+    "@context":"http://schema.org",
+    "@type":"PostalAddress",
+    "name":"whywhytechnova",
+    "streetAddress":"Sitaram Pandit Marg",
+    "addressLocality":"Ring Road",
+    "addressRegion":"Ring Road, Rajkot",
+    "postalCode":"360001",
+    "addressCountry":"India",
+    "telephone":"+91 88661 28862",
+    "email":"info@whywhytechnova.com"
+  }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png",
+        "name": "whywhytechnova",
+        "priceRange": "$$$",
+        "telephone": "88661 28862",
+        "address" :{
+          "@type": "PostalAddress",
+          "streetAddress": "Sitaram Pandit Marg",
+          "addressLocality": "Ring Road",
+          "addressRegion":"Ring Road, Rajkot",
+          "postalCode": "360001",
+          "addressCountry": "India"
+        }
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.4"
+      },
+      "name": "whywhytechnova",
+      "author": {
+        "@type": "Person",
+        "name": "Vivek Soni"
+      }
+    }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "whywhytechnova",
+      "url": "https://whywhytechnova.com"
+    }
+  </script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "WebPage",
+    "genre": "https://whywhytechnova.com",
+    "image": "https://raw.githubusercontent.com/viveksoni100/images.blogs/master/favicon.png"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="section-header is-sticky">
+    <div class="container space-between">
+      <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
+        <div class="navbar-container style2 w-container">
+          <a href="../index.html" class="brand order-first w-nav-brand w--current">
+            <h3 class="logotype">Vivek Soni &nbsp; </h3>
+          </a>
+          <nav role="navigation" class="nav-menu order-last w-nav-menu">
+            <a href="../about.html" class="nav-link w-nav-link">About</a>
+            <a href="../contact.html" class="nav-link w-nav-link">Contact</a>
+            <a href="../blog.html" class="nav-link w-nav-link w--current">Blog</a>
+            <a href="daily-java-quiz.html" class="nav-link w-nav-link">Quiz</a>
+            <a href="daily-java-qna.html" class="nav-link w-nav-link">Q&A</a>
+            <a href="../policy.html" class="nav-link w-nav-link">Privacy Policy</a>
+          </nav>
+          <div class="menu-button order-last w-nav-button"><img src="../images/burger-menu-icon-white-1.svg" width="22"
+                                                                alt="" class="burger-menu-icon white"><img
+                  src="../images/burger-menu-icon-1.svg" width="22" alt=""
+                  class="burger-menu-icon"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section is-header position-relative">
+    <div class="container">
+      <div class="col lg-12">
+        <div class="breadcrumb margin-bottom-double"><a href="../index.html">Home</a><span
+                class="fa margin-left-small margin-right-small is-xsmall w--current"></span><a href="../blog.html">Blog</a><span
+            class="fa margin-left-small margin-right-small is-xsmall"></span>Event Listener</div>
+        <h1 class="heading-beta">Simplified Email Notification Setup: Configuring Event Listeners in Java Applications</h1>
+      </div>
+    </div>
+    <div class="container flex-horizontal margin-bottom-double"></div>
+    <div class="container margin-bottom-double">
+      <div class="col lg-12">
+        <div class="c-article__date">18 February 2024</div>
+        <div class="c-article__date-divider"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col lg-3 md-12 md-order-last">
+        <div class="c-article__related">
+          <div class="margin-bottom-double text-small weight-is-black low-text-contrast"></div>
+          <div data-delay="3000" data-animation="slide" data-autoplay="1" data-duration="500" data-infinite="1"
+            class="c-article_related-slider w-slider">
+            <div class="w-slider-mask">
+              <div class="w-slide">
+                <div>
+                  <h4 class="margin-bottom">event-driven programming facilitates modular and scalable software design. By decoupling components through events and listeners, developers can create highly modular systems where individual components interact through well-defined interfaces, promoting code reusability and maintainability. This modular approach also enhances scalability, as new functionality can be added or modified with minimal impact on existing code. Additionally, event-driven architectures lend themselves well to distributed systems, where events can be used for communication between different services or modules, enabling the development of complex, distributed applications that can efficiently scale to meet changing demands. Overall, event-driven programming offers a powerful paradigm for building flexible, responsive, and scalable software systems across a wide range of domains.</h4>
+                  <div class="text-small low-text-contrast"></div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden w-slider-arrow-left">
+              <div class="w-icon-slider-left"></div>
+            </div>
+            <div class="hidden w-slider-arrow-right">
+              <div class="w-icon-slider-right"></div>
+            </div>
+            <div class="c-article_related-slider-nav w-slider-nav w-slider-nav-invert w-round"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col lg-1 no-margin-bottom"></div>
+      <div class="col lg-8 md-12" style="overflow: auto;">
+        <br class="rich-text w-richtext">
+          <!-- article starts -->
+
+          <p>In modern software development, keeping users informed about system events is crucial for providing a seamless user experience. Email notifications remain a widely used method for alerting users about important updates, reminders, or any other relevant information. In Java applications, configuring an event listener for email notifications can enhance user engagement and satisfaction. In this blog post, we'll explore how to set up an event listener for email notifications in a Java application.</p>
+
+          <h3>1. Project flow</h3></br>
+          <center><img src="../images/blogs-img/b_21/event_listener_project_flow.webp"
+                       alt="terminal log showing a spring boot application startup"
+                       class="responsive"></center><br><br>
+
+          <div id="type-of-impl">
+            <h3>2. Types of implementation</h3>
+            <p>there are various ways of implementing EventListener, two methods are popular</p>
+            <ol>
+              <li>by implementing ApplicationListener interface</li>
+              <li>by an annotation @EventListener </li>
+              </br>
+              <p>3rd approach is an asynchronous approach that is achieved by @EventListener</p>
+            </ol>
+            <p>in this blog we'll do hands-on on all 3 methods of implementing EventListener in Java</p>
+          </div>
+
+          <h3>3. By implementing ApplicationListener </h3>
+          <p>include following dependencies in your spring boot project</p>
+          <pre class="code">
+        &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+          &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+          &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+          &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-mail&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+          </pre>
+
+          <p>include following properties</p>
+          <pre class="code">
+        spring.mail.host=&lt;host&gt;
+        spring.mail.port=&lt;port&gt;
+        spring.mail.username=&lt;username&gt;
+        spring.mail.password=&lt;password&gt;
+        spring.mail.properties.mail.smtp.auth=true
+        spring.mail.properties.mail.smtp.starttls.enable=true
+          </pre>
+          <h3>3.1. Write an OrderController </h3>
+          <pre class="code">
+      package com.example.eventlistenerdemo.controller;
+
+      import com.example.eventlistenerdemo.service.OrderService;
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.stereotype.Controller;
+      import org.springframework.web.bind.annotation.GetMapping;
+      import org.springframework.web.bind.annotation.PostMapping;
+      import org.springframework.web.bind.annotation.RequestParam;
+      import org.springframework.web.servlet.ModelAndView;
+
+      /**
+       * @author viveksoni
+       */
+
+      @Controller
+      public class OrderController {
+
+          @Autowired
+          private OrderService orderService;
+
+          @GetMapping("/")
+          public ModelAndView iceCreamOrderForm() {
+              ModelAndView model = new ModelAndView("order-page");
+              model.addObject("orderplaced", Boolean.FALSE);
+              return model;
+          }
+
+          @PostMapping("/placeorder")
+          public ModelAndView placeAnOrder(@RequestParam("iceCreamFlavor") String iceCreamFlavor) {
+              ModelAndView model = new ModelAndView("order-page");
+              orderService.placeOrder(iceCreamFlavor);
+              model.addObject("orderplaced", Boolean.TRUE);
+              return model;
+          }
+      }
+          </pre>
+
+          <h3>3.2. Publishing an event</h3>
+          <p>we need to publish an event when user places an order for an ice-cream</p>
+          <pre class="code">
+      package com.example.eventlistenerdemo.service;
+
+      import com.example.eventlistenerdemo.event.OrderPlacedEvent;
+      import org.springframework.context.ApplicationEventPublisher;
+      import org.springframework.context.ApplicationEventPublisherAware;
+      import org.springframework.stereotype.Service;
+
+      /**
+       * @author viveksoni
+       */
+
+      @Service
+      public class OrderService implements ApplicationEventPublisherAware {
+
+          private ApplicationEventPublisher applicationEventPublisher;
+
+          @Override
+          public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+              this.applicationEventPublisher = applicationEventPublisher;
+          }
+
+          public void placeOrder(String iceCreamFlavor) {
+              this.applicationEventPublisher.publishEvent(new OrderPlacedEvent(this, iceCreamFlavor));
+          }
+      }
+          </pre>
+          <p>we also need to make our custom event, OrderPlaceEvent a spring Event, we can do that by simply extending an ApplicationEvent class</p>
+          <pre class="code">
+      package com.example.eventlistenerdemo.event;
+
+      import com.example.eventlistenerdemo.service.OrderService;
+      import lombok.Getter;
+      import org.springframework.context.ApplicationEvent;
+
+      /**
+       * @author viveksoni
+       */
+
+      @Getter
+      public class OrderPlacedEvent extends ApplicationEvent {
+
+          private static final long serialVersionUID = 1L;
+          private String iceCreamFlavor;
+
+          public OrderPlacedEvent(OrderService orderService, String iceCreamFlavor) {
+              super(orderService);
+              this.iceCreamFlavor = iceCreamFlavor;
+          }
+      }
+          </pre>
+
+          <h3>3.3. Create a Listener</h3>
+          <p>This is a very important step, here we define the tasks that we want to accomplish on a particular event, in our case we
+          need to send an email to the user saying that his or her order for an ice cream is placed. You might want to send an SMS, or you
+            might want to send a WhatsApp to the user, it could be anything.</p>
+          <pre class="code">
+      package com.example.eventlistenerdemo.event.listener;
+
+      import com.example.eventlistenerdemo.event.OrderPlacedEvent;
+      import com.example.eventlistenerdemo.service.EmailService;
+      import lombok.extern.slf4j.Slf4j;
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.context.ApplicationListener;
+      import org.springframework.core.annotation.Order;
+      import org.springframework.stereotype.Component;
+
+      /**
+       * @author viveksoni
+       */
+
+      @Slf4j
+      @Component
+      @Order(1)   // sets the order among multiple listener, 1 will execute first
+      public class OrderPlacedEventListener implements ApplicationListener&lt;OrderPlacedEvent&gt; {
+
+          @Autowired
+          private EmailService emailService;
+
+          @Override
+          public void onApplicationEvent(OrderPlacedEvent event) {
+              log.info("@Order(1) order placed for ice cream : {}", event.getIceCreamFlavor());
+              log.info("sending an email ::: ");
+              emailService.sendSimpleMessage("recipient@yopmail.com", "Order Placed", "we've successfully placed your ice cream ::: " +  event.getIceCreamFlavor());
+              log.info("an email sent ::: ");
+          }
+      }
+          </pre>
+          <p>here you might think, what is this @Order(1)? well you can totally omit this if you want to, however i've taken this, because it is
+          very useful when you've applied multiple listener on an event, suppose we've implemented your listener using all 3 methods that i've
+            mention on <a href="#type-of-impl">2. Types of implementation.</a></p>
+          <p>for sending an email i've used Spring's JavaMailSender class, you are free to use you're favorite method of shooting an email.</p>
+          <pre class="code">
+      package com.example.eventlistenerdemo.service;
+
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.stereotype.Service;
+      import org.springframework.mail.SimpleMailMessage;
+      import org.springframework.mail.javamail.JavaMailSender;
+
+      /**
+       * @author viveksoni
+       */
+
+      @Service
+      public class EmailService {
+
+          @Autowired
+          private JavaMailSender emailSender;
+
+          public void sendSimpleMessage(String to, String subject, String text) {
+              SimpleMailMessage message = new SimpleMailMessage();
+              message.setTo(to);
+              message.setSubject(subject);
+              message.setText(text);
+              emailSender.send(message);
+          }
+      }
+          </pre>
+
+          <h3>3.5. Testing our application</h3>
+          <p>go to your favorite browser and hit the url: http://localhost:9090/ you'll see an ice cream order form</p>
+          <center><img src="../images/blogs-img/b_21/1.webp"
+                         alt="an ice cream order form"
+                         class="responsive"></center><br><br>
+          <p>select an ice cream flavour and hit place order</p>
+          <center><img src="../images/blogs-img/b_21/2.webp"
+                       alt="order placed successfully page"
+                       class="responsive"></center><br><br>
+          <p>go to your inbox, you'll see a mail with subject 'Order Placed' is parked</p>
+          <center><img src="../images/blogs-img/b_21/3.webp"
+                       alt="mailbox"
+                       class="responsive"></center><br><br>
+
+
+          <h3>4. By an annotation @EventListener </h3>
+          <p>in place of implementing ApplicationListener interface we will be annoting our method with @EventListener annotation</p>
+          <pre class="code">
+      package com.example.eventlistenerdemo.event.listener;
+
+      import com.example.eventlistenerdemo.event.OrderPlacedEvent;
+      import com.example.eventlistenerdemo.service.EmailService;
+      import lombok.extern.slf4j.Slf4j;
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.context.event.EventListener;
+      import org.springframework.core.annotation.Order;
+      import org.springframework.stereotype.Component;
+
+      /**
+       * @author viveksoni
+       */
+
+      @Slf4j
+      @Component
+      public class OrderPlacedEventListenerAnnotation {
+
+          @Autowired
+          private EmailService emailService;
+
+          @EventListener
+          @Order(2)
+          public void handleEvent(OrderPlacedEvent event) {
+              log.info("@Order(2) order placed for ice cream using @EventListener : {}", event.getIceCreamFlavor());
+              log.info("sending an email ::: ");
+              emailService.sendSimpleMessage("recipient@yopmail.com", "Order Placed", "we've successfully placed your ice cream ::: " +  event.getIceCreamFlavor());
+              log.info("an email sent ::: ");
+          }
+      }
+          </pre>
+
+          <h3>4.1 Asynchronous Event By an annotation @EventListener </h3>
+          <p>to make our event asynchronous we'll add @Async annotation on our @EventListener annoted method</p>
+          <pre class="code">
+      package com.example.eventlistenerdemo.event.listener;
+
+      import com.example.eventlistenerdemo.event.OrderPlacedEvent;
+      import com.example.eventlistenerdemo.service.EmailService;
+      import lombok.extern.slf4j.Slf4j;
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.context.event.EventListener;
+      import org.springframework.core.annotation.Order;
+      import org.springframework.scheduling.annotation.Async;
+      import org.springframework.stereotype.Component;
+
+      /**
+       * @author viveksoni
+       */
+
+      @Slf4j
+      @Component
+      public class OrderPlacedEventListenerAsync {
+
+          @Autowired
+          private EmailService emailService;
+
+          @Async
+          @EventListener
+          @Order(3)
+          public void handleEvent(OrderPlacedEvent event) {
+              log.info("@Order(3) order placed for ice cream using @EventListener and @Async : {}", event.getIceCreamFlavor());
+              log.info("sending an email ::: ");
+              emailService.sendSimpleMessage("recipient@yopmail.com", "Order Placed", "we've successfully placed your ice cream ::: " +  event.getIceCreamFlavor());
+              log.info("an email sent ::: ");
+          }
+      }
+          </pre>
+          </br>
+          <p>we also need to enabling asynchronous calls on our application level, we can do that by adding an annotation @EnableAsync on our springboot bootstrap class</p>
+          <pre class="code">
+      package com.example.eventlistenerdemo;
+
+      import org.springframework.boot.SpringApplication;
+      import org.springframework.boot.autoconfigure.SpringBootApplication;
+      import org.springframework.scheduling.annotation.EnableAsync;
+      import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+      @EnableAsync
+      @EnableWebMvc
+      @SpringBootApplication
+      public class EventListenerDemoApplication {
+
+          public static void main(String[] args) {
+              SpringApplication.run(EventListenerDemoApplication.class, args);
+          }
+      }
+          </pre>
+
+          <h3>4.2 Testing</h3>
+          <p>again after placing an order for an ice cream, you'll notice that, it is taking a bit longer time than before, it is because we have configred 3 event listeners on a single event, also you'll see following logs printed on your console</p>
+          <pre class="code">
+      : @Order(1) order placed for ice cream : americanNuts
+      : sending an email :::
+      : an email sent :::
+      : @Order(2) order placed for ice cream using @EventListener : americanNuts
+      : sending an email :::
+      : an email sent :::
+      : @Order(3) order placed for ice cream using @EventListener and @Async : americanNuts
+      : sending an email :::
+      : an email sent :::
+          </pre>
+
+          <h3>Conclusion</h3>
+          <p>Event-driven programming is crucial in modern software development due to its ability to efficiently handle asynchronous and concurrent tasks. By structuring programs around events and event handlers, developers can create systems that respond dynamically to user interactions, system events, or external inputs. This paradigm is especially valuable in user interface development, where responsiveness and interactivity are paramount. Instead of relying on traditional procedural or sequential approaches, event-driven programming allows applications to remain responsive while waiting for user actions, ensuring a smoother user experience.</p>
+
+          <hr>
+          <p><a href="https://github.com/viveksoni100/event_listener_example"><span style="text-align: left">source code</span></a></p>
+
+          <!-- article ends -->
+        </div>
+      </div>
+    </div>
+    <div class=" decoration-rightside hidden-md">
+        </div>
+      </div>
+      <div class="section is-dark no-padding-bottom">
+        <div class="container">
+          <div class="col text-align-center lg-7 block-centered no-margin-bottom md-12">
+            <div class="pre-title">Get in touch</div>
+            <h2>Let’s work together</h2>
+            <div class="text-medium margin-bottom">Reach out if you have a concept for a website or mobile app or
+              require
+              guidance with product design. <a href="mailto:info@whywhytechnova.com"><strong>contact me.</strong></a>
+            </div>
+            <a href="mailto:info@whywhytechnova.com" class="button-primary margin-bottom-double w-inline-block">
+              <div class="button-primary-text lowercase"><i
+                  class="fas fa-envelope"></i>&nbsp;&nbsp;info@whywhytechnova.com
+              </div>
+            </a>
+            <a href="#" class="button-primary margin-bottom-double w-inline-block"
+              style="background-color: #fdf556; color: #000000;">
+              <div class="button-primary-text lowercase"><i class="fas fa-mobile"></i>&nbsp;&nbsp;+(91) 88661 28862
+              </div>
+            </a>
+            <div class="flexh-space-between maxwidth300 margin-bottom-double">
+              <a href="https://www.facebook.com/vivek.barbhaya" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/vivek_soni_100/" target="_blank"><i class="fab fa-instagram "></i></a>
+              <a href="https://github.com/viveksoni100" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/vivek-soni-797451178/exploring-the-singleton-pattern-in-java.html" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://join.skype.com/invite/weh9XYJ3okdJ" target="_blank"><i class="fab fa-skype"></i></a>
+              <a href="https://mobile.twitter.com/vickyvivek100" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+      <script src="../js/webflow.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -46,6 +46,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://whywhytechnova.com/blogs/configuring-an-event-listeners-in-java-applications.html</loc>
+  <lastmod>18/02/2024</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://whywhytechnova.com/blogs/dockerizing-a-spring-boot-app-guide.html</loc>
   <lastmod>14/12/2023</lastmod>
   <priority>0.64</priority>
