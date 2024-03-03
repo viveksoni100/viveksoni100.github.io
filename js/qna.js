@@ -2,65 +2,79 @@ $('#quiz').quiz({
     counterFormat: 'Question %current of %total',
     questions: [
         {
-            'q': 'What is the purpose of serialization?',
+            'q': 'How does Garbage Collection work in Java?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': '1. Communication: It is used for transmitting an object over\n' +
-                'network between two machines.\n' +
-                '2. Persistence: We can store the object’s state in a database\n' +
-                'and retrieve it from database later on.\n' +
-                '3. Caching: Serialization can be used for caching to improve\n' +
-                'performance. We may need 10 minutes to build an object,\n' +
-                'but it may take just 10 seconds to de-serialize the object.\n' +
-                '4. Cross JVM Synchronization: It can be used in same way\n' +
-                'across multiple JVM that follow different architecture.',
+            'correctResponse': 'Java has an automated process called Garbage Collector for\n' +
+                'Memory Management. It is a daemon in JVM that monitors the\n' +
+                'memory usage and performs memory cleanup. Once JVM is low on\n' +
+                'memory, GC process finds the unused objects that are not\n' +
+                'referenced by other objects. These unused objects are cleaned up by\n' +
+                'Garbage Collector daemon in JVM.',
             'incorrectResponse': ''
         },
         {
-            'q': 'Why do we mark a data member transient?\n',
+            'q': 'What are the different types of References in Java?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Member variables of an object are marked transient to indicate that\n' +
-                'they should not be serialized.' +
-                'During serialization process the transient variables are not\n' +
-                'considered part of the persistent state of an object.',
+            'correctResponse': '1. Strong References: When you declare an object reference without any special modifiers,\n' +
+                'you\'re creating a strong reference. As long as there is a strong reference pointing to an object,\n' +
+                'the garbage collector will not collect it.\n' +
+                '2. Weak References: Weak references are references that do not prevent the referenced object from\n' +
+                'being garbage collected. In Java, you can create weak references using the\n ' +
+                'java.lang.ref.WeakReference class.\n' +
+                '3. Soft References: Soft references are similar to weak references, but they are only collected by\n ' +
+                'the garbage collector when memory is low. They are created using the java.lang.ref.SoftReference class.\n' +
+                '4. Phantom References: Phantom references are the weakest type of reference in Java. They are enqueued\n ' +
+                'as soon as the object to which they refer as finalized but not yet reclaimed by the garbage collector.\n ' +
+                'They are created using the java.lang.ref.PhantomReference class. Phantom references are often used for\n ' +
+                'cleanup tasks or for monitoring when objects are removed from memory.',
             'incorrectResponse': ''
         },
         {
-            'q': 'Is it allowed to mark a method as transient?\n',
+            'q': 'How can we reference an unreferenced object again?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'No, Java does not allow marking a method as transient. The\n' +
-                'transient keyword is valid only for member variables.',
+            'correctResponse': 'We can provide implementation in finalize() method to reference and unreferenced object.\n '+
+                'For an unreferenced object, finalize() method is called at the time of Garbage Collection. At this time,\n' +
+                'Object can pass its reference ‘this’ to finalize() method and revive itself.',
             'incorrectResponse': ''
         },
         {
-            'q': 'What is Reflection in Java?\n',
+            'q': 'What is the purpose of the Runtime class?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Reflection is Java language\'s ability to inspect and dynamically call\n' +
-                'classes, methods, attributes etc. at Runtime. It helps in examining or\n' +
-                'modifying the Runtime behavior of a class at Runtime.',
+            'correctResponse': 'The purpose of the Runtime class is to provide access to the Java Runtime system.\n '+
+                'This class provides certain important methods like:\n' +
+                '1. Runtime.freeMemory() – This method returns the value of free memory in JVM\n' +
+                '2. Runtime.maxMemory() - This method returns the value of maximum memory that JVM can use.\n' +
+                '3. Runtime.gc() – This method can invoke garbage collection.',
             'incorrectResponse': ''
         },
         {
-                'q': 'How can we create an Object\n' +
-                    'dynamically at Runtime in Java?',
+                'q': 'Why do we use Nested Classes?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'We can use Reflection to create an Object dynamically at Runtime\n' +
-                'in Java. We can use Class.newInstance() or Constructor.newInstance()\n' +
-                'methods for creating such Objects from a class without using class qualifier.',
+            'correctResponse': 'There are following reasons for using nested classes:\n\n' +
+                '1.Logical Grouping: We can logically group classes in one place. If one class is useful to only one other\n'+
+                'class, then we put smaller class within the larger class and keep them in one file. This kind of nesting\n'+
+                '"helper classes" in a top-level class makes the package more streamlined.\n\n' +
+                '2.Encapsulation: Nested classes increase encapsulation. Let say there are two top-level classes,\n'+
+                'Foo and Bar. Bar needs access to private members of Foo. We can hide class Bar within class Foo.\n'+
+                'In this way, private members of Foo can be accessed by class Bar. So class Foo remains encapsulated.\n'+
+                'Also, class Bar remains hidden from the outside world.\n\n'+
+                '3.Code Clarity: Nested classed make the code more readable and well organized. Only Top-level classes are\n' +
+                'exposed. The helper classes are kept hidden and closer the code where it is used by a Top-level class.',
             'incorrectResponse': ''
         }
     ]
