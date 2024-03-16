@@ -2,79 +2,64 @@ $('#quiz').quiz({
     counterFormat: 'Question %current of %total',
     questions: [
         {
-            'q': 'How does Garbage Collection work in Java?',
+            'q': 'What is the difference between Nested class and an Inner class in Java?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'Java has an automated process called Garbage Collector for\n' +
-                'Memory Management. It is a daemon in JVM that monitors the\n' +
-                'memory usage and performs memory cleanup. Once JVM is low on\n' +
-                'memory, GC process finds the unused objects that are not\n' +
-                'referenced by other objects. These unused objects are cleaned up by\n' +
-                'Garbage Collector daemon in JVM.',
+            'correctResponse': 'An Inner class in Java is non-static class. It is a type of Nested class that is defined in another\n' +
+                'class but not qualified with a Static modifier. A Nested class is also a class can be Static Nested\n' +
+                'class or a non-Static Inner class.\n\n' +
+                'An Inner class has access to other members of the enclosing class, even if they are declared private.\n' +
+                'A Static Nested class can not access the other members of the enclosing class.',
             'incorrectResponse': ''
         },
         {
-            'q': 'What are the different types of References in Java?',
+            'q': 'How many objects does following code create?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': '1. Strong References: When you declare an object reference without any special modifiers,\n' +
-                'you\'re creating a strong reference. As long as there is a strong reference pointing to an object,\n' +
-                'the garbage collector will not collect it.\n' +
-                '2. Weak References: Weak references are references that do not prevent the referenced object from\n' +
-                'being garbage collected. In Java, you can create weak references using the\n ' +
-                'java.lang.ref.WeakReference class.\n' +
-                '3. Soft References: Soft references are similar to weak references, but they are only collected by\n ' +
-                'the garbage collector when memory is low. They are created using the java.lang.ref.SoftReference class.\n' +
-                '4. Phantom References: Phantom references are the weakest type of reference in Java. They are enqueued\n ' +
-                'as soon as the object to which they refer as finalized but not yet reclaimed by the garbage collector.\n ' +
-                'They are created using the java.lang.ref.PhantomReference class. Phantom references are often used for\n ' +
-                'cleanup tasks or for monitoring when objects are removed from memory.',
+            'correctResponse': 'The above code creates two objects. One object is created in String constant pool and the other is\n' +
+                'created on the heap in non-pool area.',
             'incorrectResponse': ''
         },
         {
-            'q': 'How can we reference an unreferenced object again?',
+            'q': 'Why Java uses String literal concept?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'We can provide implementation in finalize() method to reference and unreferenced object.\n '+
-                'For an unreferenced object, finalize() method is called at the time of Garbage Collection. At this time,\n' +
-                'Object can pass its reference ‘this’ to finalize() method and revive itself.',
+            'correctResponse': 'Java uses String literal concept to make Java more efficient in memory. If same String already exists\n' +
+                'in String constant pool, it can be reused. This saves memory usage.',
             'incorrectResponse': ''
         },
         {
-            'q': 'What is the purpose of the Runtime class?',
+            'q': 'What is the difference between throw and throws in Java?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'The purpose of the Runtime class is to provide access to the Java Runtime system.\n '+
-                'This class provides certain important methods like:\n' +
-                '1. Runtime.freeMemory() – This method returns the value of free memory in JVM\n' +
-                '2. Runtime.maxMemory() - This method returns the value of maximum memory that JVM can use.\n' +
-                '3. Runtime.gc() – This method can invoke garbage collection.',
+            'correctResponse': 'Java provides throw keyword to throw an exception from a method or a static block. Java provides throws\n' +
+                'keyword to mention the probable exception thrown by a method in its declaration.\n\n' +
+                'We use throw to explicitly throw an exception. We used throws to declare an exception in method definition.\n\n' +
+                'We cannot propagate checked exceptions with throw only. But checked exceptions can be propagated with\n' +
+                'throws keyword. A throw call is followed by an instance. Class or Exception follows a throws keyword.\n\n' +
+                'Call to throw occurs within a method. throws is just used with method signature.\n\n' +
+                'We can throw only one exception at a time. But we can mention as many exceptions in throws clause.',
             'incorrectResponse': ''
         },
         {
-                'q': 'Why do we use Nested Classes?',
+                'q': 'What is the concept of Exception Propagation?',
             'options': [
                 'Show answer'
             ],
             'correctIndex': 0,
-            'correctResponse': 'There are following reasons for using nested classes:\n\n' +
-                '1.Logical Grouping: We can logically group classes in one place. If one class is useful to only one other\n'+
-                'class, then we put smaller class within the larger class and keep them in one file. This kind of nesting\n'+
-                '"helper classes" in a top-level class makes the package more streamlined.\n\n' +
-                '2.Encapsulation: Nested classes increase encapsulation. Let say there are two top-level classes,\n'+
-                'Foo and Bar. Bar needs access to private members of Foo. We can hide class Bar within class Foo.\n'+
-                'In this way, private members of Foo can be accessed by class Bar. So class Foo remains encapsulated.\n'+
-                'Also, class Bar remains hidden from the outside world.\n\n'+
-                '3.Code Clarity: Nested classed make the code more readable and well organized. Only Top-level classes are\n' +
-                'exposed. The helper classes are kept hidden and closer the code where it is used by a Top-level class.',
+            'correctResponse': 'In Exception Propagation, uncaught exceptions are propagated in the call stack until stack becomes empty.\n' +
+                'This propagation is called Exception Propagation.\n\n' +
+                'Let say an exception propagates from one method to another method. A() calls B(), which calls C(), which\n' +
+                'calls D(). And if D() throws an exception, the exception will propagate from D to C to B to A, unless one\n' +
+                'of the methods catches the exception.',
             'incorrectResponse': ''
         }
     ]
