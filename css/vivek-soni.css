@@ -3199,7 +3199,7 @@ figcaption {
 }
 .c-service_card {
   padding: 40px 40px 24px;
-  border-top-left-radius: 70px;
+  /* border-top-left-radius: 70px; */
   border-bottom-right-radius: 70px;
   background-color: #fff;
   box-shadow: 0 20px 64px 0 rgba(109, 79, 67, 0.24);
